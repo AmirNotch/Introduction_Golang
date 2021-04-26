@@ -15,7 +15,7 @@ func (p *Person1) SetName(name string) {
 	p.Name = name
 }
 
-type Account struct {
+type Account1 struct {
 	Id int
 	Name string
 	Person1
@@ -40,7 +40,7 @@ func main() {
 	//(&pers).SetName("Hollywood")
 	fmt.Printf("%#v",pers)
 
-	var acc Account = Account{
+	var acc Account1 = Account1{
 		Id: 1,
 		Name: "Rubinsky",
 		Person1: Person1{
