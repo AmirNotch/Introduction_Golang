@@ -1,5 +1,5 @@
 package main
-
+/*
 import "fmt"
 
 type (
@@ -32,4 +32,5 @@ func Buy(p Payer){
 func main() {
 	myWallet := &Wallet{Cash: 100}
 	Buy(myWallet)
-}
+
+}*/
