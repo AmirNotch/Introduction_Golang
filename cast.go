@@ -1,5 +1,5 @@
 package main
-/*
+
 import "fmt"
 
 type Wallet struct {
@@ -49,6 +49,19 @@ type Payer interface {
 }
 
 func Buy(p Payer){
+	switch p.(type) {
+	case *Wallet:
+		fmt.Println("Оплата Наличными!")
+	case *Card:
+		plasticCard, ok := p.(*Card)
+		if !ok {
+			fmt.Println("Не удалось преобразовать к типу *Card")
+		}
+		fmt.Println("Вставляйте карту,", plasticCard.Cardholder)
+	default:
+		fmt.Println("Что-то Новое!")
+	}
+
 	err := p.Pay(10)
 	if err != nil {
 		fmt.Printf("Ошибка при оплате %T: %v\n\n", p,err)
@@ -68,4 +81,4 @@ func main() {
 	myMoney = &ApplePay{Money: 9}
 	Buy(myMoney)
 
-}*/
+}
