@@ -8,7 +8,7 @@ type Wallet struct {
 
 func (w *Wallet) Pay(amount int) error {
 	if w.Cash < amount {
-		fmt.Println("Не хватает денег в кошельке")
+		return fmt.Errorf("Не хватает денег в кошельке")
 	}
 	w.Cash -= amount
 	return nil

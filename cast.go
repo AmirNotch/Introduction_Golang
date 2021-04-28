@@ -1,5 +1,5 @@
 package main
-
+/*
 import "fmt"
 
 type Wallet struct {
@@ -8,7 +8,7 @@ type Wallet struct {
 
 func (w *Wallet) Pay(amount int) error {
 	if w.Cash < amount {
-		fmt.Println("Не хватает денег в кошельке")
+		return fmt.Errorf("Не хватает денег в кошельке")
 	}
 	w.Cash -= amount
 	return nil
@@ -54,7 +54,7 @@ func Buy(p Payer){
 		fmt.Println("Оплата Наличными!")
 	case *Card:
 		plasticCard, ok := p.(*Card)
-		if !ok {
+		if ok != true {
 			fmt.Println("Не удалось преобразовать к типу *Card")
 		}
 		fmt.Println("Вставляйте карту,", plasticCard.Cardholder)
@@ -71,7 +71,7 @@ func Buy(p Payer){
 }
 
 func main() {
-	myWallet := &Wallet{Cash: 100}
+	myWallet := &Wallet{Cash: 1000}
 	Buy(myWallet)
 
 	var myMoney Payer
@@ -82,3 +82,4 @@ func main() {
 	Buy(myMoney)
 
 }
+*/
