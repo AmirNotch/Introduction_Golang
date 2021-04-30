@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math"
+	"os"
 	"unicode/utf8"
 )
 
@@ -23,6 +25,20 @@ func pow(x,y,lim float64) float64{
 }
 
 func main(){
+
+	in := bufio.NewScanner(os.Stdin)
+	alreadySeen := make(map[string]bool)
+	for in.Scan(){
+		txt := in.Text()
+
+		if _, found := alreadySeen[txt]; found {
+			continue
+		}
+		alreadySeen[txt] = true
+
+		fmt.Println(txt)
+	}
+
 	/*sum := 1
 	for ; sum < 1000; {
 		sum += sum
